@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- Arguments -->
+    <arg name="action_name" default="HomeSkill"/>
+
+    <!-- Symbolic Pose Interaction Skill -->
+    <node name="home_skill" pkg="home_skill_server" type="home_skill_server" output="screen">
+      <param name='action_name' value='$(arg action_name)' />
+    </node>
+</launch>

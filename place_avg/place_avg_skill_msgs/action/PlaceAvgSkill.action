@@ -1,0 +1,12 @@
+#goal definition
+uint32 tag1
+uint32 tag2
+---
+#result definition
+int32 percentage
+string skillStatus
+string outcome
+---
+#feedback
+int32 percentage
+string skillStatus

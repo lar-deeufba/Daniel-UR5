@@ -1,0 +1,16 @@
+#goal definition
+float64 oz
+float64 oy
+float64 ox
+float64 y
+float64 x
+float64 z
+---
+#result definition
+int32 percentage
+string skillStatus
+string outcome
+---
+#feedback
+int32 percentage
+string skillStatus

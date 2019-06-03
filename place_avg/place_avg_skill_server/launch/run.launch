@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- Arguments -->
+    <arg name="action_name" default="PlaceAvgSkill"/>
+
+    <!-- Symbolic Pose Interaction Skill -->
+    <node name="place_avg_skill" pkg="place_avg_skill_server" type="place_avg_skill_server" output="screen">
+      <param name='action_name' value='$(arg action_name)' />
+    </node>
+</launch>

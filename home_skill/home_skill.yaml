@@ -1,0 +1,6 @@
+skill_name: home
+
+server_language: cpp
+
+goals:
+  home: int32

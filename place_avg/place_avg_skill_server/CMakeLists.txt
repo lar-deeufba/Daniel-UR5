@@ -1,0 +1,47 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(place_avg_skill_server)
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  actionlib
+  place_avg_skill_msgs
+  trac_ik_lib
+  control_msgs
+  cv_bridge
+  apriltags_swatbotics
+  robotiq_2f_gripper_control
+)
+
+file(GLOB PROGRAM_HEADERS RELATIVE ${PROJECT_SOURCE_DIR} "include/${PROJECT_NAME}/*.h")
+
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR})
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+
+find_package( OpenCV REQUIRED )
+
+find_package (apriltags_swatbotics REQUIRED)
+
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES ${PROJECT_NAME}
+  CATKIN_DEPENDS 
+  trac_ik_lib
+  LIBRARIES apriltags_swatbotics
+  LIBRARIES robotiq_2f_gripper_control
+)
+
+include_directories(
+ include
+  ${catkin_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIR}
+  ${OpenCV_INCLUDE_DIRS}
+  ${apriltags_swatbotics_INCLUDE_DIRS}
+  ${robotiq_2f_gripper_control_INCLUDE_DIRS}
+)
+
+ add_executable(${PROJECT_NAME} src/place_avg_skill_server.cpp src/main.cpp src/ur5.cpp src/Kinect.cpp src/ObjDetection.cpp src/rfinger.cpp ${PROGRAM_HEADERS})
+ target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${ZBAR_LIBRARIES} zbar)
+ add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++1y -g -O3")

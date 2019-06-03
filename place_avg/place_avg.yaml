@@ -1,0 +1,9 @@
+skill_name: place_avg
+
+server_language: cpp
+
+goals:
+  tag1: uint32
+  tag2: uint32
+  
+ 

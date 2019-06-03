@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" name="place_avg_skill" qt:editorversion="4.8.1">
+    <state id="PlaceAvgSkill">
+        <qt:editorinfo scenegeometry="-84.96;-373.25;35.64;3.39;181.82;107.24" geometry="-84.96;-373.25;120.60;376.64;181.82;107.24"/>
+        <datamodel>
+            <data id="actionName" expr="&quot;PlaceAvgSkill&quot;"/>
+            <data id="actionGoal" expr="{&quot;tag1&quot;:10,&quot;tag2&quot;:10}">
+                <qt:editorinfo geometry="26.49;30.57;0;0;0;0"/>
+            </data>
+            <data id="actionType" expr="'place_avg_skill_msgs/PlaceAvgSkillAction'"/>
+            <data id="actionResult" expr="{}"/>
+            <data id="outcomes" expr="[]">
+                <qt:editorinfo geometry="26.52;25.50;0;0;0;0"/>
+            </data>
+        </datamodel>
+    </state>
+</scxml>
